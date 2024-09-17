@@ -106,8 +106,13 @@ body *{
 /* Preview Pane */
 
 .preview-container{
-	height: calc(100% - 80px);
+	max-height: calc(100% - 80px);
+	height: fit-content;
 	overflow-y: auto;
+}
+
+.preview{
+	width: 100%;
 }
 
 .btn-container{

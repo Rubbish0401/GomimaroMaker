@@ -1,4 +1,4 @@
-function createGomimaro(msg = "", hue = 120){
+function createGomimaro(msg = "", hue = 120, saturation = 75, lightness = 85){
 	let container = document.createElement("div");
 
 	let msgBase = document.createElement("div");
@@ -11,7 +11,7 @@ function createGomimaro(msg = "", hue = 120){
 	let icon = document.createElement("img");
 
 	container.className = "gomimaro-container";
-	container.style.background = `hsl(${hue}, 75%, 85%)`;
+	container.style.background = `hsl(${hue} ${saturation} ${lightness})`;
 
 	msgBase.className = "gomimaro-column gomimaro-msg-base";
 	msgFrame.className = "gomimaro-msg-frame";
