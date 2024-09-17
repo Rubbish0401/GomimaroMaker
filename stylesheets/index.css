@@ -27,4 +27,14 @@ body{
 
 /* Modification Pane */
 
+#btn-gen{
+	font-weight: 600;
+	color: #FFFFFF;
+	background: hsl(225, 75%, 80%);
+}
+
+#btn-gen:hover{
+	background: hsl(225, 75%, 90%);
+}
+
 /* Preview Pane */

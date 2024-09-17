@@ -23,7 +23,7 @@ function createGomimaro(msg = "", hue = 120, saturation = 75, lightness = 85){
 
 	footer.className = "gomimaro-column gomimaro-footer";
 	icon.className = "gomimaro-icon";
-	icon.src = "src/images/png/rounded_paper_64.png";
+	icon.src = "https://rubbish0401.github.io/GomimaroMaker/src/images/png/rounded_paper_64.png";
 
 	container.appendChild(msgBase);
 	container.appendChild(filler);

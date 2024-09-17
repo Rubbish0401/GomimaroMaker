@@ -20,8 +20,15 @@ window.addEventListener("load", function (event) {
 
 		preview.style.height = `${previewContainer.offsetWidth / 1920 * previewData.offsetHeight}px`;
 	});
-	document.getElementById("btn-gen").click();
 
+	document.getElementById("btn-reset").addEventListener("click", function(event){
+		reset();
+	});
+	
+	document.getElementById("btn-clear").addEventListener("click", function(event){
+		clear();
+	});
+	
 	document.addEventListener("input", function (event) {
 		if (["hue", "saturation", "lightness"].indexOf(event.target.id) != -1) {
 			let hue = document.getElementById("hue").value;
@@ -64,4 +71,29 @@ window.addEventListener("load", function (event) {
 			});
 		});
 	});
+
+	window.addEventListener("resize", function(event){
+		let previewContainer = document.getElementsByClassName("preview-container")[0];
+		previewData.style.scale = previewContainer.offsetWidth / 1920;
+
+		preview.style.height = `${previewContainer.offsetWidth / 1920 * previewData.offsetHeight}px`;
+	});
+
+	initialise();
 });
+
+function initialise(){
+	reset();
+	clear();
+}
+
+function reset(){
+	document.getElementById("hue").value = 120;
+	document.getElementById("saturation").value = 75;
+	document.getElementById("lightness").value = 85;
+	document.getElementById("msg").value = "";
+}
+
+function clear(){
+	document.getElementById("btn-gen").click();
+}
