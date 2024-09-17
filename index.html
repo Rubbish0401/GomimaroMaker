@@ -12,8 +12,10 @@
 
 	<!-- API -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script src="scripts/header.js"></script>
 
 	<!-- Styles -->
+	<link rel="stylesheet" href="stylesheets/gomimaro/gomimaro.css">
 	<link rel="stylesheet" href="stylesheets/index-structure.css">
 	<link rel="stylesheet" href="stylesheets/index.css">
 
@@ -38,12 +40,24 @@
 	</div>
 
 	<div class="back">
-		<div class="pane" style="background: red">
+		<div class="pane">
+			<input id="hue" class="hue-range" type="range" value="120" min="0" max="255" step="1">
+			<input id="saturation" class="hue-range" type="range" value="75" min="0" max="100" step="0.1">
+			<input id="lightness" class="hue-range" type="range" value="85" min="0" max="100" step="0.1">
+			<textarea id="msg" class="msg-editor" rows="30"></textarea>
+			<button id="btn-gen" class="text-btn">
+				生成
+			</button>
 		</div>
 
-		<div class="pane" style="background: blue;">
-			<div class="preview">
+		<div class="pane">
+			<div class="preview-container">
+				
+			</div>
 
+			<div class="btn-container">
+				<img id="btn-dl" class="img-btn" src="src/images/svg/download.svg">
+				<img id="btn-share" class="img-btn" src="src/images/svg/share.svg">
 			</div>
 		</div>
 	</div>
