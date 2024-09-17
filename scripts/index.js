@@ -43,12 +43,16 @@ window.addEventListener("load", function (event) {
 	document.getElementById("btn-share").addEventListener("click", async function (event) {
 		previewData.style.scale = 1;
 
-		let canvas = await takeScreenshot(previewData, previewData.offsetWidth, previewData.offsetHeight, false);
-		await share("", "", "", [
-			await canvasToFile(canvas),
-		]);
-
-		let previewContainer = document.getElementsByClassName("preview-container")[0];
-		previewData.style.scale = previewContainer.offsetWidth / 1920;
+		takeScreenshot(previewData, previewData.offsetWidth, previewData.offsetHeight, false).then(canvas => {
+			canvas.toBlob(blob => {
+				let file = new File([blob], "", {type: blob.type});
+				share("", "", "", [
+					file
+				]).then(a => {
+					let previewContainer = document.getElementsByClassName("preview-container")[0];
+					previewData.style.scale = previewContainer.offsetWidth / 1920;
+				});
+			});
+		});
 	});
 });

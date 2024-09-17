@@ -87,7 +87,7 @@ async function canvasToFile(canvas){
 	canvas.toBlob(blob => {
 		file = new File([blob], "", {
 			type: blob.type,
-		})
+		});
 	});
 
 	return file;
