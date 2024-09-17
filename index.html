@@ -1,6 +1,15 @@
 <html>
 
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH8QRLY634"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-BH8QRLY634');
+	</script>
 
 	<!-- Viewport and Charset -->
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
@@ -49,7 +58,7 @@
 			<input id="saturation" class="hue-range" type="range" value="75" min="0" max="100" step="0.1">
 			<input id="lightness" class="hue-range" type="range" value="85" min="0" max="100" step="0.1">
 			<textarea id="msg" class="msg-editor" rows="6"></textarea>
-			
+
 			<div class="btn-container">
 				<button id="btn-reset" class="text-btn">
 					リセット
