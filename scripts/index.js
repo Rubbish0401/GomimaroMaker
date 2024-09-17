@@ -41,11 +41,22 @@ window.addEventListener("load", function (event) {
 	});
 
 	document.getElementById("btn-share").addEventListener("click", async function (event) {
+		let now = new Date();
+		let filename = "gomimaro_" + [
+			fillChars(String(now.getFullYear()), 4, "0"),
+			fillChars(String(now.getMonth() + 1), 2, "0"),
+			fillChars(String(now.getDate()), 2, "0"),
+			fillChars(String(now.getHours()), 2, "0"),
+			fillChars(String(now.getMinutes()), 2, "0"),
+			fillChars(String(now.getSeconds()), 2, "0"),
+			fillChars(String(now.getMilliseconds()), 3, "0"),
+		].join("") + ".png";
+
 		previewData.style.scale = 1;
 
 		takeScreenshot(previewData, previewData.offsetWidth, previewData.offsetHeight, false).then(canvas => {
 			canvas.toBlob(blob => {
-				let file = new File([blob], "", {type: blob.type});
+				let file = new File([blob], filename, { type: blob.type });
 				share("Gomimaro Maker", "heyheyhey", "https://rubbish0401.github.io/GomimaroMaker/", [file]).then(a => {
 					let previewContainer = document.getElementsByClassName("preview-container")[0];
 					previewData.style.scale = previewContainer.offsetWidth / 1920;
