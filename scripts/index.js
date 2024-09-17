@@ -32,9 +32,21 @@ window.addEventListener("load", function (event) {
 		}
 	});
 
-	document.getElementById("btn-dl").addEventListener("click", function(event){
+	document.getElementById("btn-dl").addEventListener("click", function (event) {
 		previewData.style.scale = 1;
 		takeScreenshot(previewData, previewData.offsetWidth, previewData.offsetHeight, true);
+
+		let previewContainer = document.getElementsByClassName("preview-container")[0];
+		previewData.style.scale = previewContainer.offsetWidth / 1920;
+	});
+
+	document.getElementById("btn-share").addEventListener("click", async function (event) {
+		previewData.style.scale = 1;
+
+		let canvas = await takeScreenshot(previewData, previewData.offsetWidth, previewData.offsetHeight, false);
+		await share("", "", "", [
+			await canvasToFile(canvas),
+		]);
 
 		let previewContainer = document.getElementsByClassName("preview-container")[0];
 		previewData.style.scale = previewContainer.offsetWidth / 1920;
