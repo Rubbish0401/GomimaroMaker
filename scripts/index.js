@@ -2,6 +2,8 @@ var previewData;
 
 window.addEventListener("load", function (event) {
 	document.getElementById("btn-gen").addEventListener("click", async function (event) {
+		if (previewData) previewData.remove();
+
 		let hue = document.getElementById("hue").value;
 		let saturation = document.getElementById("saturation").value;
 		let lightness = document.getElementById("lightness").value;
@@ -14,7 +16,6 @@ window.addEventListener("load", function (event) {
 		previewData.style.scale = previewContainer.offsetWidth / 1920;
 		previewData.style.transformOrigin = "left top";
 
-		if (previewData) previewData.remove();
 		preview.appendChild(previewData);
 
 		preview.style.height = `${previewContainer.offsetWidth / 1920 * previewData.offsetHeight}px`;
