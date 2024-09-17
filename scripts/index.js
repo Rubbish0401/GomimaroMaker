@@ -46,9 +46,7 @@ window.addEventListener("load", function (event) {
 		takeScreenshot(previewData, previewData.offsetWidth, previewData.offsetHeight, false).then(canvas => {
 			canvas.toBlob(blob => {
 				let file = new File([blob], "", {type: blob.type});
-				share("", "", "", [
-					file
-				]).then(a => {
+				share("Gomimaro Maker", "heyheyhey", "https://rubbish0401.github.io/GomimaroMaker/", [file]).then(a => {
 					let previewContainer = document.getElementsByClassName("preview-container")[0];
 					previewData.style.scale = previewContainer.offsetWidth / 1920;
 				});
