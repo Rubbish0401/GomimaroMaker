@@ -1,0 +1,9 @@
+@font-face {
+	font-family: "Noto Sans Japanese";
+	src: url("../../src/fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype") tech(variations);
+}
+
+@font-face {
+	font-family: "Noto Serif Japanese";
+	src: url("../../src/fonts/NotoSerifJP-VariableFont_wght.ttf") format("truetype") tech(variations);
+}

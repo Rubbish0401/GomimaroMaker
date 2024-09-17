@@ -1,0 +1,30 @@
+/* Global */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	font-family: "Noto Sans Japanese", "Open Sans";
+	color: #5f6368;
+}
+
+a{
+	text-decoration: none;
+	font-weight: 500;
+}
+
+body{
+	background: hsl(225, 75%, 98%);
+}
+
+/* Titlebar */
+.titlebar{
+	box-shadow: 4px 4px 4px #80808080;
+	background: hsl(225, 75%, 80%);
+}
+
+/* Screen */
+
+/* Modification Pane */
+
+/* Preview Pane */
