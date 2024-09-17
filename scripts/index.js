@@ -55,12 +55,12 @@ window.addEventListener("load", function (event) {
 		previewData.style.scale = 1;
 
 		takeScreenshot(previewData, previewData.offsetWidth, previewData.offsetHeight, false).then(canvas => {
+			let previewContainer = document.getElementsByClassName("preview-container")[0];
+			previewData.style.scale = previewContainer.offsetWidth / 1920;
+
 			canvas.toBlob(blob => {
 				let file = new File([blob], filename, { type: blob.type });
-				share("Gomimaro Maker", "", "https://rubbish0401.github.io/GomimaroMaker/", [file]).then(a => {
-					let previewContainer = document.getElementsByClassName("preview-container")[0];
-					previewData.style.scale = previewContainer.offsetWidth / 1920;
-				});
+				share("Gomimaro Maker", "", "https://rubbish0401.github.io/GomimaroMaker/", [file]);
 			});
 		});
 	});
