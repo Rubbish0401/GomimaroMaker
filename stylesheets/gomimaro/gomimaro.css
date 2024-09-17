@@ -45,6 +45,7 @@
 }
 
 .gomimaro-msg-frame{
+	max-width: 100%;
 	width: 100%;
 	height: fit-content;
 	min-height: 904px;
@@ -59,7 +60,12 @@
 }
 
 .gomimaro-msg{
+	max-width: 100%;
+
 	font-family: "Noto Sans Serif", "Open Sans";
 	font-size: 64px;
 	text-align: center;
+
+	overflow-wrap: anywhere;
+	text-wrap: wrap;
 }
