@@ -1,6 +1,0 @@
-@font-face {
-	font-family: "Open Sans";
-	src:
-		url("../../src/fonts/OpenSans-VariableFont_wdth\,wght.ttf") format("truetype") tech(variations),
-		url("../../src/fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf") format("truetype") tech(variations);
-}
