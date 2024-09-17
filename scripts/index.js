@@ -1,8 +1,6 @@
 var previewData;
 
 window.addEventListener("load", function (event) {
-	if (previewData) URL.revokeObjectURL(previewData);
-
 	document.getElementById("btn-gen").addEventListener("click", async function (event) {
 		let hue = document.getElementById("hue").value;
 		let saturation = document.getElementById("saturation").value;
@@ -33,7 +31,7 @@ window.addEventListener("load", function (event) {
 		}
 	});
 
-	document.getElementById("btn-dl").addEventListener("click", function(){
+	document.getElementById("btn-dl").addEventListener("click", function(event){
 		previewData.style.scale = 1;
 		takeScreenshot(previewData, previewData.offsetWidth, previewData.offsetHeight, true);
 
